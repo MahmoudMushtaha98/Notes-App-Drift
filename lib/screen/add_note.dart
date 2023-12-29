@@ -17,7 +17,13 @@ class _AddNoteState extends State<AddNote> {
   bool checkTitle = false;
   bool checkGraph = false;
   DateTime dateTime = DateTime.now();
-  final database = AppDatabase();
+  late final AppDatabase database;
+
+  @override
+  void initState() {
+    database = AppDatabase();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../confg/database.dart';
 import '../model/note_details_model.dart';
-import '../model/notes_model.dart';
 import '../widget/notes_widgets.dart';
 import 'add_note.dart';
 import 'note_screen.dart';
@@ -21,13 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
   List<TodoItem> notes = [];
 
   Future readData() async {
-    notes = await database.select(database.todoItems).get();
+    notes = await database.select(database.todoItems).get()?? [];
     if(mounted){
       setState(() {
 
       });
     }
-    print(notes);
   }
 
   @override

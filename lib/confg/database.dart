@@ -17,6 +17,7 @@ class TodoItems extends Table {
 
 
 
+
 @DriftDatabase(tables: [TodoItems])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
